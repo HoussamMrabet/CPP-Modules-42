@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:54:33 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/06/12 17:16:23 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/06/12 18:53:59 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,20 @@ void	PhoneBook::addContact()
 
 void	PhoneBook::searchContact()
 {
-	int	i;
+	std::string	input;
+	int			i;
 
 	this->list_contacts();
 	std::cout << "Enter a contact index: ";
-	std::cin >> i;
+	std::cin >> input;
+	for (int j = 0; j < input.length(); j++)
+	{
+		if (!std::isdigit(input[j])) {
+			std::cout << "Invalid contact index!" << std::endl;
+			return ;
+		}
+	}
+	i = std::stoi(input);
 	if (i < 1 || i > 8)
 		std::cout << "Invalid contact index!" << std::endl;
 	else
