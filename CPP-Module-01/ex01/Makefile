@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/06 04:09:02 by hmrabet           #+#    #+#              #
-#    Updated: 2024/06/13 17:32:04 by hmrabet          ###   ########.fr        #
+#    Created: 2024/06/14 22:00:08 by hmrabet           #+#    #+#              #
+#    Updated: 2024/06/14 22:00:54 by hmrabet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = PhoneBook
+NAME = Zombies
 
-SOURCE = main.cpp PhoneBook.cpp Contact.cpp
+SOURCE = main.cpp Zombie.cpp zombieHorde.cpp
 
-OBJECT = main.o PhoneBook.o Contact.o
+OBJECT = main.o Zombie.o zombieHorde.o
 
 CPP = c++ -Wall -Wextra -Werror -std=c++98
 
