@@ -5,21 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/16 16:28:14 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/06/16 17:30:15 by hmrabet          ###   ########.fr       */
+/*   Created: 2024/06/16 17:14:37 by hmrabet           #+#    #+#             */
+/*   Updated: 2024/06/16 17:31:03 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sed.hpp"
+#include "Harl.hpp"
+
+void	ft_toupper(std::string& input)
+{
+	int	i;
+	
+	i = 0;
+	while (input[i])
+	{
+		input[i] = std::toupper(input[i]);
+		i++;
+	}
+}
 
 int	main(int ac, char **av)
 {
-	if (ac == 4)
+	if (ac == 2)
 	{
-		Sed	sed(av[1], av[2], av[3]);
-		sed.replace();
+		Harl		harl;
+		std::string	level;
+
+		level = av[1];
+		ft_toupper(level);
+		harl.complain(level);
 	}
 	else
 		std::cerr << "invalid arguments count!" << std::endl << std::flush;
-	return (0);
+	return (0);	
 }

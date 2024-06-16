@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/16 16:28:14 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/06/16 17:30:15 by hmrabet          ###   ########.fr       */
+/*   Created: 2024/06/16 17:14:33 by hmrabet           #+#    #+#             */
+/*   Updated: 2024/06/16 17:18:20 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sed.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-int	main(int ac, char **av)
+#include <iostream>
+
+class Harl
 {
-	if (ac == 4)
-	{
-		Sed	sed(av[1], av[2], av[3]);
-		sed.replace();
-	}
-	else
-		std::cerr << "invalid arguments count!" << std::endl << std::flush;
-	return (0);
-}
+	private:
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
+	public:
+		Harl(void);
+		void	complain(std::string level);
+		~Harl(void);
+};
+
+#endif
