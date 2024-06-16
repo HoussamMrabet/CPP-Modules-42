@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/11 09:47:55 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/06/14 23:18:25 by hmrabet          ###   ########.fr       */
+/*   Created: 2024/06/14 23:25:47 by hmrabet           #+#    #+#             */
+/*   Updated: 2024/06/16 13:03:56 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-# include <iostream>
+#include <iostream>
+#include "Weapon.hpp"
 
-class Contact
+class HumanA
 {
+	private:
+		Weapon 		&weapon;
+		std::string	name;
 	public:
-		std::string	index;
-		std::string firstname;
-		std::string lastname;
-		std::string nickname;
-		std::string phone_number;
-		std::string darkest_secret;
+		HumanA(std::string name, Weapon &weapon);
+		void	attack();
+		~HumanA();
 };
 
 #endif
