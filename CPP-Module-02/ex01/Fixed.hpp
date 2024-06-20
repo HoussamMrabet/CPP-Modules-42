@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 17:59:23 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/06/20 13:39:10 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/06/20 14:57:22 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ class Fixed
 		Fixed(const int fixedPoint);
 		Fixed(const float fixedPoint);
 		Fixed(const Fixed &fixed);
-		Fixed&			operator=(const Fixed &fixed);
-		float			toFloat(void) const;
-		int				toInt(void) const;
+		Fixed&	operator=(const Fixed &fixed);
+		float	toFloat(void) const;
+		int		toInt(void) const;
 		~Fixed();
 };
 
