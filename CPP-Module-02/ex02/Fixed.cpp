@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 13:50:30 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/06/20 15:25:58 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/06/20 16:08:41 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,25 +76,25 @@ bool	Fixed::operator!=(const Fixed &fixed) const
 
 Fixed	Fixed::operator+(const Fixed &fixed) const
 {
-	Fixed	res(this->fixedPoint + fixed.fixedPoint);
+	Fixed	res(this->toFloat() + fixed.toFloat());
 	return (res);
 }
 
 Fixed	Fixed::operator-(const Fixed &fixed) const
 {
-	Fixed	res(this->fixedPoint - fixed.fixedPoint);
+	Fixed	res(this->toFloat() - fixed.toFloat());
 	return (res);
 }
 
 Fixed	Fixed::operator*(const Fixed &fixed) const
 {
-	Fixed	res(this->fixedPoint * fixed.fixedPoint);
+	Fixed	res(this->toFloat() * fixed.toFloat());
 	return (res);
 }
 
 Fixed	Fixed::operator/(const Fixed &fixed) const
 {
-	Fixed	res(this->fixedPoint / fixed.fixedPoint);
+	Fixed	res(this->toFloat() / fixed.toFloat());
 	return (res);
 }
 
@@ -106,8 +106,8 @@ Fixed&	Fixed::operator++(void)
 
 Fixed	Fixed::operator++(int)
 {
-	Fixed	res(this->fixedPoint);
-	this->fixedPoint++;
+	Fixed	res;
+	res.fixedPoint = this->fixedPoint++;
 	return (res);
 }
 
@@ -120,7 +120,7 @@ Fixed&	Fixed::operator--(void)
 Fixed	Fixed::operator--(int)
 {
 	Fixed	res(this->fixedPoint);
-	this->fixedPoint--;
+	res.fixedPoint = this->fixedPoint--;
 	return (res);
 }
 
