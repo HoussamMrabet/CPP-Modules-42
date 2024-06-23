@@ -6,7 +6,7 @@
 #    By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/14 22:00:08 by hmrabet           #+#    #+#              #
-#    Updated: 2024/06/14 22:00:54 by hmrabet          ###   ########.fr        #
+#    Updated: 2024/06/23 09:43:55 by hmrabet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ all : $(NAME)
 $(NAME) : $(OBJECT)
 	$(CPP) $^ -o $(NAME)
 
-%.o : %.c Makefile
+%.o : %.c Makefile Zombie.hpp
 	$(CPP) -c $< -o $@
 
 clean :

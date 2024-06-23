@@ -6,7 +6,7 @@
 #    By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/17 17:58:26 by hmrabet           #+#    #+#              #
-#    Updated: 2024/06/17 17:58:39 by hmrabet          ###   ########.fr        #
+#    Updated: 2024/06/23 09:42:44 by hmrabet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ all : $(NAME)
 $(NAME) : $(OBJECT)
 	$(CPP) $^ -o $(NAME)
 
-%.o : %.c Makefile
+%.o : %.c Makefile Fixed.h
 	$(CPP) -c $< -o $@
 
 clean :

@@ -6,7 +6,7 @@
 #    By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/06 04:09:02 by hmrabet           #+#    #+#              #
-#    Updated: 2024/06/13 17:32:04 by hmrabet          ###   ########.fr        #
+#    Updated: 2024/06/23 09:44:28 by hmrabet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ all : $(NAME)
 $(NAME) : $(OBJECT)
 	$(CPP) $^ -o $(NAME)
 
-%.o : %.c Makefile
+%.o : %.c Makefile PhoneBook.hpp Contact.hpp
 	$(CPP) -c $< -o $@
 
 clean :
