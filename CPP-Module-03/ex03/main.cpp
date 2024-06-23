@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 20:09:35 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/06/21 06:40:42 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/06/22 02:23:35 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	main(void)
 {
 	DiamondTrap houbet("houbet");
 	
+	houbet.whoAmI();
 	houbet.attack("hmrabet");
 	houbet.takeDamage(80);
 	houbet.beRepaired(20);
