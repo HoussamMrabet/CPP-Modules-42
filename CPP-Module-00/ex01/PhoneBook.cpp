@@ -6,12 +6,13 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:54:33 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/08/30 17:49:44 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/08/30 19:51:05 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <iomanip>
+#include <string>
 
 PhoneBook::PhoneBook()
 {
@@ -36,14 +37,24 @@ void	PhoneBook::displaycommands()
 	std::cout << "Enter your command: " << std::flush;
 }
 
+std::string trim(const std::string& s)
+{
+    int start = s.find_first_not_of(" \t\n\r\f\v");
+    if (start == std::string::npos) {
+        return "";
+    }
+    int end = s.find_last_not_of(" \t\n\r\f\v");
+    return s.substr(start, end - start + 1);
+}
+
 std::string	read_input(const std::string msg)
 {
 	std::string	input;
 	
-	while (input.empty())
+	while (trim(input).empty())
 	{
 		std::cout << msg << std::flush;
-		std::cin >> input;
+		std::getline(std::cin, input);
 		if (std::cin.eof())
 		{
 			std::cout << std::endl << "CYA!" << std::endl << std::flush;
@@ -79,7 +90,8 @@ bool	PhoneBook::valid_index(std::string input)
 {
 	for (int j = 0; j < input.length(); j++)
 	{
-		if (!std::isdigit(input[j])) {
+		if (!std::isdigit(input[j]))
+		{
 			std::cout << "Invalid contact index!" << std::endl << std::flush;
 			return (false);
 		}
@@ -100,12 +112,14 @@ void	PhoneBook::searchContact()
 	while (1)
 	{
 		std::cout << "Enter a contact index: " << std::flush;
-		std::cin >> input;
+		std::getline(std::cin, input);
 		if (std::cin.eof())
 		{
 			std::cout << "CYA!" << std::endl << std::flush;
 			exit(0);
 		}
+		if (trim(input).empty())
+			continue ;
 		if (valid_index(input))
 			break ;
 	}

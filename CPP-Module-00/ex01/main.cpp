@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 09:58:46 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/08/30 13:16:13 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/08/30 19:41:16 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(void)
 	while (1)
 	{
 		std::string	input;
-		std::cin >> input;
+		std::getline(std::cin, input);
 		ft_toupper(input);
 		if (input == "EXIT" || std::cin.eof())
 		{
