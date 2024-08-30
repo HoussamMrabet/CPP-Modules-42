@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 19:06:37 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/06/12 19:11:49 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/08/30 14:05:34 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,22 @@ int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
-void Account::_displayTimestamp(){
-    std::time_t result = std::time(NULL);
+void Account::_displayTimestamp()
+{
+    int year = 1992;
+    int month = 1;
+    int day = 4;
+    int hour = 9;
+    int minute = 15;
+    int second = 32;
 
-    std::cout << std::setfill('0') <<"[" << 1900 + std::localtime(&result)->tm_year
-                << std::setw(2) << 1 + std::localtime(&result)->tm_mon
-                <<  std::setw(2) << std::localtime(&result)->tm_mday
+    std::cout << std::setfill('0') <<"[" << year
+                << std::setw(2) << month
+                <<  std::setw(2) << day
                 <<  "_"
-                <<  std::setw(2) << std::localtime(&result)->tm_hour
-                <<  std::setw(2) << std::localtime(&result)->tm_min
-                <<  std::setw(2) << std::localtime(&result)->tm_sec 
+                <<  std::setw(2) << hour
+                <<  std::setw(2) << minute
+                <<  std::setw(2) << second 
                 << "] " << std::flush;
 }
 
@@ -78,7 +84,6 @@ void    Account::displayAccountsInfos( void ) {
                 << "withdrawals:" << getNbWithdrawals() << std::endl;
 }
 
-// Accessing account detail private info
 void    Account::makeDeposit( int deposit ) {
     this->_displayTimestamp();
     _nbDeposits++;
@@ -89,7 +94,7 @@ void    Account::makeDeposit( int deposit ) {
     _amount += deposit;
     std::cout << "deposit:" << deposit << ";"
                 << "amount:" << _amount << ";"
-                << "nb_deposit:" << _nbDeposits << std::endl;
+                << "nb_deposits:" << _nbDeposits << std::endl;
 }
 
 bool    Account::makeWithdrawal(int withdrawal ) {
@@ -107,7 +112,7 @@ bool    Account::makeWithdrawal(int withdrawal ) {
     _totalAmount -= withdrawal;
     _amount -= withdrawal;
     std::cout << "amount:" << _amount << ";"
-                << "nb_deposit:" << _nbDeposits << std::endl;
+                << "nb_withdrawals:" << _nbDeposits << std::endl;
     return true;
 }
 
