@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Sed.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: hmrabet <hmrabet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 16:04:43 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/06/16 16:23:26 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/09/02 12:38:51 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,16 @@ Sed::~Sed(void)
 
 void	Sed::replace(void)
 {
-	std::ifstream input(this->filename);
+	std::ifstream	input(this->filename);
 	if (!input.is_open())
 	{
 		std::cerr << "Error opening file: " << this->filename << std::endl << std::flush;
 		return ;
 	}
-	std::string content((std::istreambuf_iterator<char>(input)), (std::istreambuf_iterator<char>()));
+	std::string content;
+	char		ch;
+	while (input.get(ch))
+		content += ch;
 	input.close();
 	size_t pos = 0;
 	while ((pos = content.find(this->s1, pos)) != std::string::npos)
