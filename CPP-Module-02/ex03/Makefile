@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+         #
+#    By: hmrabet <hmrabet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/20 20:02:24 by hmrabet           #+#    #+#              #
-#    Updated: 2024/06/23 09:42:26 by hmrabet          ###   ########.fr        #
+#    Updated: 2024/09/02 10:24:07 by hmrabet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ all : $(NAME)
 $(NAME) : $(OBJECT)
 	$(CPP) $^ -o $(NAME)
 
-%.o : %.c Makefile Fixed.hpp Point.hpp
+%.o : %.cpp Makefile Fixed.hpp Point.hpp
 	$(CPP) -c $< -o $@
 
 clean :

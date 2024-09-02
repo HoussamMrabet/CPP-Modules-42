@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+         #
+#    By: hmrabet <hmrabet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 17:32:15 by hmrabet           #+#    #+#              #
-#    Updated: 2024/06/23 09:44:05 by hmrabet          ###   ########.fr        #
+#    Updated: 2024/09/02 10:23:04 by hmrabet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ all : $(NAME)
 $(NAME) : $(OBJECT)
 	$(CPP) $^ -o $(NAME)
 
-%.o : %.c Makefile Zombie.hpp
+%.o : %.cpp Makefile Zombie.hpp
 	$(CPP) -c $< -o $@
 
 clean :

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: hmrabet <hmrabet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:54:33 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/08/30 19:51:05 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/09/02 10:28:58 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,8 @@ void	PhoneBook::displaycommands()
 std::string trim(const std::string& s)
 {
     int start = s.find_first_not_of(" \t\n\r\f\v");
-    if (start == std::string::npos) {
+    if (start == static_cast<int>(std::string::npos))
         return "";
-    }
     int end = s.find_last_not_of(" \t\n\r\f\v");
     return s.substr(start, end - start + 1);
 }
@@ -88,7 +87,7 @@ void	PhoneBook::addContact()
 
 bool	PhoneBook::valid_index(std::string input)
 {
-	for (int j = 0; j < input.length(); j++)
+	for (int j = 0; j < static_cast<int>(input.length()); j++)
 	{
 		if (!std::isdigit(input[j]))
 		{

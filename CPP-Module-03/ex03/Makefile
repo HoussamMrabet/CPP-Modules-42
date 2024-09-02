@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+         #
+#    By: hmrabet <hmrabet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/20 20:09:37 by hmrabet           #+#    #+#              #
-#    Updated: 2024/06/23 09:40:43 by hmrabet          ###   ########.fr        #
+#    Updated: 2024/09/02 10:25:20 by hmrabet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ all : $(NAME)
 $(NAME) : $(OBJECT)
 	$(CPP) $^ -o $(NAME)
 
-%.o : %.c Makefile ClapTrap.h ScavTrap.h FragTrap.h DiamondTrap.h
+%.o : %.cpp Makefile ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 	$(CPP) -c $< -o $@
 
 clean :

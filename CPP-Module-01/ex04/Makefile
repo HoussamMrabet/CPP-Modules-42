@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+         #
+#    By: hmrabet <hmrabet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/16 13:21:07 by hmrabet           #+#    #+#              #
-#    Updated: 2024/06/23 09:43:22 by hmrabet          ###   ########.fr        #
+#    Updated: 2024/09/02 10:23:29 by hmrabet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ all : $(NAME)
 $(NAME) : $(OBJECT)
 	$(CPP) $^ -o $(NAME)
 
-%.o : %.c Makefile Sed.hpp
+%.o : %.cpp Makefile Sed.hpp
 	$(CPP) -c $< -o $@
 
 clean :
