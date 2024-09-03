@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 17:14:35 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/06/16 17:32:04 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/09/03 20:23:22 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,22 @@ Harl::~Harl(void)
 
 void	Harl::debug(void)
 {
-	std::cout << "[ DEBUG ]\nI love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger.\nI really do!" << std::endl << std::endl << std::flush;
+	std::cout << "[ DEBUG ]\nI love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger.\nI really do!" << std::endl << std::endl;
 }
 
 void	Harl::info(void)
 {
-	std::cout << "[ INFO ]\nI cannot believe adding extra bacon costs more money.\nYou didn't put enough bacon in my burger! If you did, I wouldn't be asking for more!" << std::endl << std::endl << std::flush;
+	std::cout << "[ INFO ]\nI cannot believe adding extra bacon costs more money.\nYou didn't put enough bacon in my burger! If you did, I wouldn't be asking for more!" << std::endl << std::endl;
 }
 
 void	Harl::warning(void)
 {
-	std::cout << "[ WARNING ]\nI think I deserve to have some extra bacon for free.\nI've been coming for years whereas you started working here since last month." << std::endl << std::endl << std::flush;
+	std::cout << "[ WARNING ]\nI think I deserve to have some extra bacon for free.\nI've been coming for years whereas you started working here since last month." << std::endl << std::endl;
 }
 
 void	Harl::error(void)
 {
-	std::cout << "[ ERROR ]\nThis is unacceptable! I want to speak to the manager now." << std::endl << std::endl << std::flush;
+	std::cout << "[ ERROR ]\nThis is unacceptable! I want to speak to the manager now." << std::endl << std::endl;
 }
 
 void	Harl::complain(std::string level)
@@ -59,6 +59,6 @@ void	Harl::complain(std::string level)
 			(this->*func[3])();
 			break;
 		default:
-			std::cout << "[ Probably complaining about insignificant problems! ]" << std::endl << std::flush;
+			std::cout << "[ Probably complaining about insignificant problems! ]" << std::endl;
 	}
 }

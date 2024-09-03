@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 09:58:46 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/08/30 19:41:16 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/09/03 20:23:22 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(void)
 		ft_toupper(input);
 		if (input == "EXIT" || std::cin.eof())
 		{
-			std::cout << "CYA!" << std::endl << std::flush;
+			std::cout << "CYA!" << std::endl;
 			break ;
 		}
 		else if (input == "ADD")
@@ -45,7 +45,7 @@ int	main(void)
 			book.searchContact();
 		else
 		{
-			std::cout << std::endl << "Enter a valid command !" << std::endl << std::flush;
+			std::cout << std::endl << "Enter a valid command !" << std::endl;
 			book.displaycommands();
 		}
 	}

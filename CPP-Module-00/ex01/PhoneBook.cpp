@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmrabet <hmrabet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:54:33 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/09/02 10:28:58 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/09/03 20:23:22 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ PhoneBook::~PhoneBook()
 
 void	PhoneBook::start()
 {
-	std::cout << "Welcome to the PhoneBook !" << std::endl << std::flush;
+	std::cout << "Welcome to the PhoneBook !" << std::endl;
 	this->displaycommands();
 }
 
 void	PhoneBook::displaycommands()
 {
-	std::cout << std::endl << "usage : here is the commands you can use:" << std::endl << std::flush;
-	std::cout << "ADD : save a new contact" << std::endl << std::flush;
-	std::cout << "SEARCH : display a specific contact" << std::endl << std::flush;
-	std::cout << "EXIT : quit the program" << std::endl << std::endl << std::flush;
-	std::cout << "Enter your command: " << std::flush;
+	std::cout << std::endl << "usage : here is the commands you can use:" << std::endl;
+	std::cout << "ADD : save a new contact" << std::endl;
+	std::cout << "SEARCH : display a specific contact" << std::endl;
+	std::cout << "EXIT : quit the program" << std::endl << std::endl;
+	std::cout << "Enter your command: ";
 }
 
 std::string trim(const std::string& s)
@@ -52,11 +52,11 @@ std::string	read_input(const std::string msg)
 	
 	while (trim(input).empty())
 	{
-		std::cout << msg << std::flush;
+		std::cout << msg;
 		std::getline(std::cin, input);
 		if (std::cin.eof())
 		{
-			std::cout << std::endl << "CYA!" << std::endl << std::flush;
+			std::cout << std::endl << "CYA!" << std::endl;
 			exit(0);
 		}
 	}
@@ -69,7 +69,7 @@ void	PhoneBook::addContact()
 	std::string	input;
 	
 	this->contacts[(i % 8)].set_index((i % 8) + 1);
-	std::cout << "To add a new contact fill the following informations :" << std::endl << std::flush;
+	std::cout << "To add a new contact fill the following informations :" << std::endl;
 	input = read_input("first name : ");
 	this->contacts[(i % 8)].set_firstname(input);
 	input = read_input("last name : ");
@@ -80,8 +80,8 @@ void	PhoneBook::addContact()
 	this->contacts[(i % 8)].set_phone_number(input);
 	input = read_input("darkest secret : ");
 	this->contacts[(i % 8)].set_darkest_secret(input);
-	std::cout << std::endl << "Your contact is saved!" << std::endl << std::endl << std::flush;
-	std::cout << "Enter your command: " << std::flush;
+	std::cout << std::endl << "Your contact is saved!" << std::endl << std::endl;
+	std::cout << "Enter your command: ";
 	i++;
 }
 
@@ -91,13 +91,13 @@ bool	PhoneBook::valid_index(std::string input)
 	{
 		if (!std::isdigit(input[j]))
 		{
-			std::cout << "Invalid contact index!" << std::endl << std::flush;
+			std::cout << "Invalid contact index!" << std::endl;
 			return (false);
 		}
 	}
 	if (std::stoi(input) < 1 || std::stoi(input) > 8)
 	{
-		std::cout << "Invalid contact index!" << std::endl << std::flush;
+		std::cout << "Invalid contact index!" << std::endl;
 		return (false);
 	}
 	return (true);
@@ -110,11 +110,11 @@ void	PhoneBook::searchContact()
 	this->list_contacts();
 	while (1)
 	{
-		std::cout << "Enter a contact index: " << std::flush;
+		std::cout << "Enter a contact index: ";
 		std::getline(std::cin, input);
 		if (std::cin.eof())
 		{
-			std::cout << "CYA!" << std::endl << std::flush;
+			std::cout << "CYA!" << std::endl;
 			exit(0);
 		}
 		if (trim(input).empty())
@@ -123,7 +123,7 @@ void	PhoneBook::searchContact()
 			break ;
 	}
 	if (!this->find_contact(std::stoi(input) - 1))
-		std::cout << std::endl << "Enter your command: " << std::flush;
+		std::cout << std::endl << "Enter your command: ";
 }
 
 std::string	PhoneBook::ft_print(std::string str)
@@ -138,16 +138,16 @@ void	PhoneBook::list_contacts()
 	int	i;
 
 	i = 0;
-	std::cout << "Contacts list:" << std::endl << std::flush;
+	std::cout << "Contacts list:" << std::endl;
 	while (i < 8)
 	{
 		if (this->contacts[i].get_firstname().empty())
 			return ;
-		std::cout << "|" << std::setw(10) << (i + 1) << std::flush;
-		std::cout << "|" << std::setw(10) << this->ft_print(this->contacts[i].get_firstname()) << std::flush;
-		std::cout << "|" << std::setw(10) << this->ft_print(this->contacts[i].get_lastname()) << std::flush;
-		std::cout << "|" << std::setw(10) << this->ft_print(this->contacts[i].get_nickname()) << std::flush;
-		std::cout << "|" << std::endl << std::flush;
+		std::cout << "|" << std::setw(10) << (i + 1);
+		std::cout << "|" << std::setw(10) << this->ft_print(this->contacts[i].get_firstname());
+		std::cout << "|" << std::setw(10) << this->ft_print(this->contacts[i].get_lastname());
+		std::cout << "|" << std::setw(10) << this->ft_print(this->contacts[i].get_nickname());
+		std::cout << "|" << std::endl;
 		i++;
 	}
 }
@@ -156,15 +156,15 @@ bool	PhoneBook::find_contact(int index)
 {
 	if (this->contacts[index].get_firstname().empty())
 	{
-		std::cout << "this index is still empty!" << std::endl << std::flush;
+		std::cout << "this index is still empty!" << std::endl;
 		return (false);
 	}
-	std::cout << std::endl << this->contacts[index].get_index() << std::endl << std::flush;
-	std::cout << this->contacts[index].get_firstname() << std::endl << std::flush;
-	std::cout << this->contacts[index].get_lastname() << std::endl << std::flush;
-	std::cout << this->contacts[index].get_nickname() << std::endl << std::flush;
-	std::cout << this->contacts[index].get_phone_number() << std::endl << std::flush;
-	std::cout << this->contacts[index].get_darkest_secret() << std::endl << std::flush;
-	std::cout << std::endl << "Enter your command: " << std::flush;
+	std::cout << std::endl << this->contacts[index].get_index() << std::endl;
+	std::cout << this->contacts[index].get_firstname() << std::endl;
+	std::cout << this->contacts[index].get_lastname() << std::endl;
+	std::cout << this->contacts[index].get_nickname() << std::endl;
+	std::cout << this->contacts[index].get_phone_number() << std::endl;
+	std::cout << this->contacts[index].get_darkest_secret() << std::endl;
+	std::cout << std::endl << "Enter your command: ";
 	return (true);
 }

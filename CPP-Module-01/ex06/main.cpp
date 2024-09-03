@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 17:14:37 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/06/16 17:31:03 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/09/03 20:23:22 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ int	main(int ac, char **av)
 		harl.complain(level);
 	}
 	else
-		std::cerr << "invalid arguments count!" << std::endl << std::flush;
+		std::cerr << "invalid arguments count!" << std::endl;
 	return (0);	
 }

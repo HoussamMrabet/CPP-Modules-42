@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 19:58:05 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/06/20 20:04:48 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/09/03 20:23:22 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	main(void)
 	Point point(3, 3);
 
 	if (bsp(a, b, c, point))
-		std::cout << "Point is in the triangle" << std::endl << std::flush;
+		std::cout << "Point is in the triangle" << std::endl;
 	else
-		std::cout << "Point is not in the triangle" << std::endl << std::flush;
+		std::cout << "Point is not in the triangle" << std::endl;
 	return 0;
 }

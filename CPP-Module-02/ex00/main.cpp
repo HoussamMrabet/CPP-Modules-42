@@ -6,13 +6,14 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 19:48:23 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/06/17 17:32:47 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/09/03 20:24:29 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int	main(void) {
+int	main(void)
+{
 	Fixed a;
 	Fixed b(a);
 	Fixed c;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Sed.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmrabet <hmrabet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 16:04:43 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/09/02 12:38:51 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/09/03 20:23:22 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ Sed::Sed(const std::string& filename, const std::string& s1, const std::string& 
 	this->filename = filename;
 	this->s1 = s1;
 	this->s2 = s2;
-	std::cout << "A Sed has been created!" << std::endl << std::flush;
+	std::cout << "A Sed has been created!" << std::endl;
 }
 
 Sed::~Sed(void)
 {
-	std::cout << "A Sed has been destructed!" << std::endl << std::flush;
+	std::cout << "A Sed has been destructed!" << std::endl;
 }
 
 void	Sed::replace(void)
@@ -30,7 +30,7 @@ void	Sed::replace(void)
 	std::ifstream	input(this->filename);
 	if (!input.is_open())
 	{
-		std::cerr << "Error opening file: " << this->filename << std::endl << std::flush;
+		std::cerr << "Error opening file: " << this->filename << std::endl;
 		return ;
 	}
 	std::string content;
@@ -48,7 +48,7 @@ void	Sed::replace(void)
 	std::ofstream output(outputFilename);
 	if (!output.is_open())
 	{
-		std::cerr << "Error creating output file: " << outputFilename << std::endl << std::flush;
+		std::cerr << "Error creating output file: " << outputFilename << std::endl;
 		return ;
 	}
 	output << content;
