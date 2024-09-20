@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:56:11 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/09/08 22:52:38 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/09/20 14:41:49 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,3 @@ std::string	Animal::getType(void) const
 	return (this->type);
 }
 
-void	Animal::makeSound(void) const
-{
-	std::cout << this->getType() << " is not defined" << std::endl;
-}
