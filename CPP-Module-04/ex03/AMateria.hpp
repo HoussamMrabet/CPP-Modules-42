@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 14:23:51 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/09/20 16:08:51 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/09/20 16:37:06 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 # define AMATERIA_HPP
 
 # include <iostream>
-
-class ICharacter;
+#include "ICharacter.hpp"
 
 class AMateria
 {

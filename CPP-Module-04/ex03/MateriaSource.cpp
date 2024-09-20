@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:46:25 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/09/20 16:13:26 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/09/20 16:40:00 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,8 @@ void MateriaSource::learnMateria(AMateria *aMateria)
 	int i = 0;
 	while (i < 4)
 	{
-        if (!learnedAMateria[i]){
+        if (!learnedAMateria[i])
+		{
             learnedAMateria[i] = aMateria;
             return ;
         }
@@ -85,9 +86,8 @@ AMateria *MateriaSource::createMateria(std::string const &type)
 	int i = 0;
 	while (i < 4)
 	{
-        if (learnedAMateria[i] && learnedAMateria[i]->getType() == type){
+        if (learnedAMateria[i] && learnedAMateria[i]->getType() == type)
             return (learnedAMateria[i]->clone());
-        }
 		i++;
 	}
 	return NULL;

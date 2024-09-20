@@ -6,12 +6,11 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 14:27:33 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/09/20 16:09:37 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/09/20 16:37:01 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
-#include "ICharacter.hpp"
 
 AMateria::AMateria() : type("default")
 {

@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:38:32 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/09/20 15:39:52 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/09/20 16:39:23 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 # define IMATERIASOURCE_HPP
 
 # include <iostream>
-
-class AMateria;
+# include "AMateria.hpp"
 
 class IMateriaSource
 {
