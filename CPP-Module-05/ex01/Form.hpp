@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 14:20:45 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/11/22 20:50:03 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/11/22 23:44:21 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define FORM_HPP
 
 # include <iostream>
-# include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {

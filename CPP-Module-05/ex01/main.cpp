@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 21:00:00 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/11/22 21:33:50 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/11/22 23:46:32 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ int main()
 
         Form taxForm("Tax Declaration", 40, 20);
         Form contractForm("Contract Agreement", 70, 50);
+		Form defaultF;
 
+        std::cout << defaultF;
         std::cout << taxForm;
         std::cout << contractForm;
 
