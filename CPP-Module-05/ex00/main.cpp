@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 14:00:00 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/11/22 14:18:09 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/11/22 20:11:36 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,7 @@ int	main()
 	{
 		Bureaucrat lowGradeBureaucrat("TooLow", 151);
 	}
-	catch (const Bureaucrat::GradeTooHighException &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	catch (const Bureaucrat::GradeTooLowException &e)
+	catch (const std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
@@ -63,11 +59,7 @@ int	main()
 		Bureaucrat highestBureaucrat("Top", 1);
 		highestBureaucrat.incrementGrade();
 	}
-	catch (const Bureaucrat::GradeTooHighException &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	catch (const Bureaucrat::GradeTooLowException &e)
+	catch (const std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
@@ -77,11 +69,7 @@ int	main()
 		Bureaucrat lowestBureaucrat("Bottom", 150);
 		lowestBureaucrat.decrementGrade();
 	}
-	catch (const Bureaucrat::GradeTooHighException &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	catch (const Bureaucrat::GradeTooLowException &e)
+	catch (const std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}

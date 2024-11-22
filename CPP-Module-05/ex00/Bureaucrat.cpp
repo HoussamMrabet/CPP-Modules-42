@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 13:34:54 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/11/22 14:18:22 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/11/22 20:49:36 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void				Bureaucrat::decrementGrade(void)
 	this->grade++;
 }
 
-std::ostream&	operator<<(std::ostream& out, Bureaucrat& b)
+std::ostream&	operator<<(std::ostream& out, const Bureaucrat& b)
 {
 	out << b.getName() << ", bureaucrat grade " << b.getGrade() << std::endl;
 	return (out);

@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 13:23:50 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/11/22 13:38:53 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/11/22 20:49:47 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <iostream>
 # include <exception>
-# include <string>
 # include <cstdlib>
 # include <ctime>
 
@@ -50,6 +49,6 @@ class Bureaucrat
 		};
 };
 
-std::ostream	&operator<<(std::ostream &out, Bureaucrat &b);
+std::ostream	&operator<<(std::ostream &out, const Bureaucrat &b);
 
 #endif
