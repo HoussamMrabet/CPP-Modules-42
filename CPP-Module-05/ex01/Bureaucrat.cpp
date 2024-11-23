@@ -6,13 +6,13 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 13:34:54 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/11/22 20:49:24 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/11/23 16:25:57 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-int	generateGrade(void)
+static int	generateGrade(void)
 {
 	std::srand(std::time(0));
     return (1 + (rand() % 150));

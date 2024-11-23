@@ -6,20 +6,26 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 14:19:58 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/11/22 23:48:24 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/11/23 16:27:33 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-int	generateGrade(void)
+static int	generateGrade(void)
 {
 	std::srand(std::time(0));
     return (1 + (rand() % 150));
 }
 
-Form::Form(const std::string &name, int gradeSign, int gradeExec) : name(name), isSigned(false), gradeSign(gradeSign), gradeExec(gradeExec) {}
+Form::Form(const std::string &name, int gradeSign, int gradeExec) : name(name), isSigned(false), gradeSign(gradeSign), gradeExec(gradeExec)
+{
+	if (this->gradeSign < 1 || this->gradeExec < 1)
+		throw GradeTooHighException();
+	else if (this->gradeSign > 150 || this->gradeExec > 150)
+		throw GradeTooLowException();
+}
 
 Form::Form() : name("blank"), isSigned(false), gradeSign(generateGrade()), gradeExec(generateGrade()) {}
 
