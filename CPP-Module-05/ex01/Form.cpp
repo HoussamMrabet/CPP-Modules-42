@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: hmrabet <hmrabet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 14:19:58 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/11/23 16:27:33 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/11/25 22:42:05 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,18 +74,12 @@ int		Form::getGradeExec() const
 	return (this->gradeExec);
 }
 
-void			Form::beSigned(const Bureaucrat &b)
+void	Form::beSigned(const Bureaucrat &b)
 {
-	if (this->getIsSigned()) {
-		std::cout << "Form " << this->name << " is already signed." << std::endl; 
-		return;
-	}
 	if (b.getGrade() > this->getGradeSign())
 		throw Form::GradeTooLowException();
 	else
-	{
 		this->isSigned = true;
-	}
 }
 
 const char *	Form::GradeTooHighException::what() const throw()

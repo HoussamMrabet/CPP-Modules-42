@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: hmrabet <hmrabet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 13:34:54 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/11/23 16:25:57 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/11/25 22:41:09 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,11 @@ void				Bureaucrat::signForm(Form& form)
 {
 	try
 	{
+		if (form.getIsSigned())
+		{
+			std::cout << "Form " << this->name << " is already signed." << std::endl; 
+			return ;
+		}
 		form.beSigned(*this);
 		std::cout << "Bureaucrat " << this->name << " signed the form " << form.getName() << std::endl;
 	}
