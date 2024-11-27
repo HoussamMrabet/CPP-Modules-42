@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 14:19:58 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/11/25 22:42:05 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/11/27 14:56:51 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,18 +76,24 @@ int		Form::getGradeExec() const
 
 void	Form::beSigned(const Bureaucrat &b)
 {
+	if (this->getIsSigned())
+		throw SignStateException();
 	if (b.getGrade() > this->getGradeSign())
-		throw Form::GradeTooLowException();
-	else
-		this->isSigned = true;
+		throw GradeTooLowException();
+	this->isSigned = true;
 }
 
 const char *	Form::GradeTooHighException::what() const throw()
 {
-	return ("Grade is higher than required!");
+	return (" grade is higher than required!");
 }
 
 const char *	Form::GradeTooLowException::what() const throw()
 {
-	return ("Grade is lower than required!");
+	return (" grade is lower than required!");
+}
+
+const char *	Form::SignStateException::what() const throw()
+{
+	return (" is already signed!");
 }

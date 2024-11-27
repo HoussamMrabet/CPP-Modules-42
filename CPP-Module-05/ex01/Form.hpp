@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: hmrabet <hmrabet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 14:20:45 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/11/22 23:44:21 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/11/27 14:51:19 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ class Form
 				const char	*what() const throw();
 		};
 		class GradeTooLowException : public std::exception
+		{
+			public:
+				const char	*what() const throw();
+		};
+		class SignStateException : public std::exception
 		{
 			public:
 				const char	*what() const throw();
