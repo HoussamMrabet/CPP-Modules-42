@@ -6,11 +6,11 @@
 #    By: hmrabet <hmrabet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/22 23:39:31 by hmrabet           #+#    #+#              #
-#    Updated: 2024/11/27 15:57:10 by hmrabet          ###   ########.fr        #
+#    Updated: 2024/11/28 22:28:12 by hmrabet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Form
+NAME = AForm
 
 SOURCE = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
