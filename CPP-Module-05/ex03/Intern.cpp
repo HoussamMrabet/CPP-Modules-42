@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 19:15:05 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/11/27 22:27:24 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/11/28 22:17:48 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,18 +50,14 @@ AForm *createPresidentialPardonForm(const std::string &target)
 
 AForm   *Intern::makeForm(std::string const &name, std::string const &target)
 {
-    const std::map<std::string, AForm* (*)(const std::string&)> formCreators = 
-        {
-            {"robotomy request", createRobotomyRequestForm},
-            {"shrubbery creation", createShrubberyCreationForm},
-            {"presidential pardon", createPresidentialPardonForm}
-        };
-
-    std::map<std::string, AForm* (*)(const std::string&)>::const_iterator it = formCreators.find(name);
+    AForm *(*funcs[])(const std::string &target) = {&createRobotomyRequestForm, &createShrubberyCreationForm, &createPresidentialPardonForm};
+    std::string names[] = {"robotomy request", "shrubbery creation", "presidential pardon"};
+    int i = 0;
     
-    if (it == formCreators.end())
+    while (i < 3 && names[i].compare(name))
+        i++ ;
+    if (i > 2)
         throw InvalidFormException();
-
-    return (it->second(target));
+    return ((*funcs[i])(target));
 }
 
