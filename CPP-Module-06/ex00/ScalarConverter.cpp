@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 02:51:08 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/11/30 06:48:41 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/11/30 09:08:50 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,53 +27,37 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other)
 
 ScalarConverter::~ScalarConverter() {}
 
-static bool ft_isdigit(char c)
+static void		caster(const std::string &literal)
 {
-	return (c >= '0' && c <= '9');
-}
+	double	n = atof(literal.c_str());
 
-static void		intConvert(std::string param)
-{
-	long	n = atoi(param.c_str());
-
+	if (n < -std::numeric_limits<double>::max() || n > std::numeric_limits<double>::max())
+	{
+        std::cout << "char: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+        std::cout << "float: impossible" << std::endl;
+        std::cout << "double: impossible" << std::endl;
+        return;
+    }
 	if (n < 0 || n > 127)
 		std::cout << "char: impossible" << std::endl;
 	else if (n < 32 || n == 127)
 		std::cout << "char: non-displayable" << std::endl;
 	else
 		std::cout << "char: '" << static_cast<char>(n) << "'" << std::endl;
-	std::cout << "int: " << n << std::endl;
-	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(n) << "f" << std::endl;
-	std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(n) << std::endl;
-}
-
-static void		floatConvert(std::string param)
-{
-	float	n = atof(param.c_str());
-
-	if (n < 0 || n > 127)
-		std::cout << "char: impossible" << std::endl;
-	else if (n < 32 || n == 127)
-		std::cout << "char: non-displayable" << std::endl;
+	
+	std::cout << "int: ";
+	if (n > std::numeric_limits<int>::max() || n < std::numeric_limits<int>::min())
+		std::cout << "impossible" << std::endl;
 	else
-		std::cout << "char: '" << static_cast<char>(n) << "'" << std::endl;
-	std::cout << "int: " << static_cast<int>(n) << std::endl;
-	std::cout << "float: " << std::fixed << std::setprecision(1) << n << "f" << std::endl;
-	std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(n) << std::endl;
-}
-
-static void		doubleConvert(std::string param)
-{
-	double	n = atof(param.c_str());
-
-	if (n < 0 || n > 127)
-		std::cout << "char: impossible" << std::endl;
-	else if (n < 32 || n == 127)
-		std::cout << "char: non-displayable" << std::endl;
+		std::cout << static_cast<int>(n) << std::endl;
+	
+	std::cout << "float: ";
+	if (n > std::numeric_limits<float>::max() || n < -std::numeric_limits<float>::max())
+		std::cout << "impossible" << std::endl;
 	else
-		std::cout << "char: '" << static_cast<char>(n) << "'" << std::endl;
-	std::cout << "int: " << static_cast<int>(n) << std::endl;
-	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(n) << "f" << std::endl;
+		std::cout << std::fixed << std::setprecision(1) << static_cast<float>(n) << "f" << std::endl;
+
 	std::cout << "double: " << std::fixed << std::setprecision(1) << n << std::endl;
 }
 
@@ -89,7 +73,7 @@ void ScalarConverter::convert(const std::string	&literal)
 			std::cout << "double: 0.0" << std::endl;
 			return ;
 		}
-		if (literal.length() == 1 && !ft_isdigit(literal[0]))
+		if (literal.length() == 1 && !(literal[0] >= '0' && literal[0] <= '9'))
 		{
 			if (static_cast<unsigned char>(literal[0]) > 127)
 				std::cout << "char: impossible" << std::endl;
@@ -133,7 +117,7 @@ void ScalarConverter::convert(const std::string	&literal)
 
 			if (literal[i] == '-' || literal[i] == '+')
 				i++;
-			while (i < literal.length() - 1 && (ft_isdigit(literal[i]) || literal[i] == '.'))
+			while (i < literal.length() - 1 && ((literal[i] >= '0' && literal[i] <= '9') || literal[i] == '.'))
 			{
 				if (literal[i] == '.')
 					dots++;
@@ -143,7 +127,7 @@ void ScalarConverter::convert(const std::string	&literal)
 				throw "nan";
 			if (i == literal.length() - 1)
 			{
-				floatConvert(literal);
+				caster(literal);
 				return ;
 			}
 		}
@@ -154,7 +138,7 @@ void ScalarConverter::convert(const std::string	&literal)
 			
 			if (literal[i] == '-' || literal[i] == '+')
 				i++;
-			while (ft_isdigit(literal[i]) || literal[i] == '.')
+			while ((literal[i] >= '0' && literal[i] <= '9') || literal[i] == '.')
 			{
 				if (literal[i] == '.')
 					dots++;
@@ -164,21 +148,21 @@ void ScalarConverter::convert(const std::string	&literal)
 				throw "nan";
 			if (i == literal.length())
 			{
-				doubleConvert(literal);
+				caster(literal);
 				return ;
 			}
 		}
-		if (ft_isdigit(literal[0]) || literal[0] == '-' || literal[0] == '+')
+		if ((literal[0] >= '0' && literal[0] <= '9') || literal[0] == '-' || literal[0] == '+')
 		{
 			std::size_t	i = 0;
 
 			if (literal[i] == '-' || literal[i] == '+')
 				i++;
-			while (ft_isdigit(literal[i]))
+			while ((literal[i] >= '0' && literal[i] <= '9'))
 				i++;
 			if (i == literal.length())
 			{
-				intConvert(literal);
+				caster(literal);
 				return;
 			}
 		}

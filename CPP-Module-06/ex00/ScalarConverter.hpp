@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:32:12 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/11/30 06:26:24 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/11/30 08:45:21 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <cstdlib>
 # include <iomanip>
+# include <limits>
 
 class ScalarConverter {
 	public:
