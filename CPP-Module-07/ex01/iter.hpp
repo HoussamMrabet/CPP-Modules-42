@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 00:57:29 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/12/01 10:04:50 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/12/01 10:36:33 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	iter(T *arr, size_t len, void (*func)(T&))
 }
 
 template <typename T>
-void printInt(T &n)
+void print(T &n)
 {
-    std::cout << n << " ";
+    std::cout << n << std::endl;
 }
 
 #endif

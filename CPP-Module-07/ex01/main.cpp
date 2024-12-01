@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 01:00:41 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/12/01 10:05:12 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/12/01 10:36:42 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ int main()
 {
     int arr[] = {1, 2, 3, 4, 5};
 	
-    iter(arr, 5, printInt);
-    
-	std::cout << std::endl;
+    iter(arr, 5, print);
 	
     return (0);
 }
