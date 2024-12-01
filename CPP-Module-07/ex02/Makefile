@@ -6,7 +6,7 @@
 #    By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/22 23:39:31 by hmrabet           #+#    #+#              #
-#    Updated: 2024/12/01 01:22:08 by hmrabet          ###   ########.fr        #
+#    Updated: 2024/12/01 10:10:39 by hmrabet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SOURCE = main.cpp
 
 OBJECT = $(SOURCE:.cpp=.o)
 
-HEADERS = Array.hpp
+HEADERS = Array.hpp Array.tpp
 
 CPP = @c++ -Wall -Wextra -Werror -std=c++98
 

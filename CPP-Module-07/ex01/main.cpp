@@ -6,17 +6,11 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 01:00:41 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/12/01 01:04:14 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/12/01 10:05:12 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
-#include <iostream>
-
-void printInt(int &n)
-{
-    std::cout << n << " ";
-}
 
 int main()
 {
