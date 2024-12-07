@@ -6,17 +6,17 @@
 #    By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/22 23:39:31 by hmrabet           #+#    #+#              #
-#    Updated: 2024/12/07 02:36:57 by hmrabet          ###   ########.fr        #
+#    Updated: 2024/12/07 14:07:00 by hmrabet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = btc
 
-SOURCE = main.cpp
+SOURCE = main.cpp BitcoinExchange.cpp
 
 OBJECT = $(SOURCE:.cpp=.o)
 
-HEADERS = 
+HEADERS = BitcoinExchange.hpp
 
 CPP = @c++ -Wall -Wextra -Werror -std=c++98
 
