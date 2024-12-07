@@ -6,17 +6,17 @@
 #    By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/22 23:39:31 by hmrabet           #+#    #+#              #
-#    Updated: 2024/12/07 02:46:30 by hmrabet          ###   ########.fr        #
+#    Updated: 2024/12/07 14:25:19 by hmrabet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = RPN
 
-SOURCE = main.cpp
+SOURCE = main.cpp RPN.cpp
 
 OBJECT = $(SOURCE:.cpp=.o)
 
-HEADERS = 
+HEADERS = RPN.hpp
 
 CPP = @c++ -Wall -Wextra -Werror -std=c++98
 
