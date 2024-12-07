@@ -6,17 +6,17 @@
 #    By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/22 23:39:31 by hmrabet           #+#    #+#              #
-#    Updated: 2024/12/07 02:52:39 by hmrabet          ###   ########.fr        #
+#    Updated: 2024/12/07 15:51:29 by hmrabet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PmergeMe
 
-SOURCE = main.cpp
+SOURCE = main.cpp PmergeMe.cpp
 
 OBJECT = $(SOURCE:.cpp=.o)
 
-HEADERS = 
+HEADERS = PmergeMe.hpp
 
 CPP = @c++ -Wall -Wextra -Werror -std=c++98
 
