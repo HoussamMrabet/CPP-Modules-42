@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 14:18:46 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/12/07 15:08:40 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/12/07 20:09:02 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ bool isNumber(const std::string &token)
     return (token.size() == 1 && std::isdigit(token[0]));
 }
 
-int performOperation(int a, int b, const std::string &op)
+float performOperation(float a, float b, const std::string &op)
 {
     if (op == "+")
         return (a + b);
@@ -41,9 +41,9 @@ int performOperation(int a, int b, const std::string &op)
     return (0);
 }
 
-int evaluateRPN(const std::string &expression)
+float evaluateRPN(const std::string &expression)
 {
-    std::stack<int>     stack;
+    std::stack<float>     stack;
     std::istringstream  iss(expression);
     std::string         token;
 
@@ -60,11 +60,11 @@ int evaluateRPN(const std::string &expression)
                 std::cerr << "Error: Malformed expression" << std::endl;
                 std::exit(1);
             }
-            int b = stack.top();
+            float b = stack.top();
             stack.pop();
-            int a = stack.top();
+            float a = stack.top();
             stack.pop();
-            int result = performOperation(a, b, token);
+            float result = performOperation(a, b, token);
             stack.push(result);
         }
         else

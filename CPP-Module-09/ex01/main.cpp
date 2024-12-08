@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 02:45:54 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/12/07 14:38:32 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/12/07 20:09:23 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(int argc, char **argv)
     std::string expression = argv[1];
     try
     {
-        unsigned long long result = evaluateRPN(expression);
+        float result = evaluateRPN(expression);
         std::cout << result << std::endl;
     }
     catch (const std::exception &e)

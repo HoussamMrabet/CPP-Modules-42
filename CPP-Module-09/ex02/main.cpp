@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 02:52:14 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/12/08 13:34:38 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/12/08 14:52:26 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,25 +33,20 @@ int main(int argc, char** argv)
 
     std::deque<int> inputDeque(inputVector.begin(), inputVector.end());
 
-    // Display unsorted input
     std::cout << "Before: ";
     displayContainer(inputVector);
 
-    // Sort and time with vector
     clock_t startVector = clock();
     mergeInsertionSort(inputVector);
     clock_t endVector = clock();
 
-    // Sort and time with deque
     clock_t startDeque = clock();
     mergeInsertionSort(inputDeque);
     clock_t endDeque = clock();
 
-    // Display sorted output
     std::cout << "After: ";
     displayContainer(inputVector);
 
-    // Display timings
     double timeVector = static_cast<double>(endVector - startVector) / CLOCKS_PER_SEC * 1000000;
     double timeDeque = static_cast<double>(endDeque - startDeque) / CLOCKS_PER_SEC * 1000000;
     std::cout << "Time to process a range of " << inputVector.size() << " elements with std::vector: " << std::fixed << std::setprecision(6) << timeVector << " us" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 14:17:48 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/12/07 14:22:16 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/12/07 20:09:16 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 bool    isOperator(const std::string &token);
 bool    isNumber(const std::string &token);
-int     performOperation(int a, int b, const std::string &op);
-int     evaluateRPN(const std::string &expression);
+float     performOperation(float a, float b, const std::string &op);
+float   evaluateRPN(const std::string &expression);
 
 #endif

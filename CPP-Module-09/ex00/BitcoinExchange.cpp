@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 14:04:01 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/12/07 14:04:30 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/12/07 20:29:04 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,12 @@ void processInput(const std::string &filename, const std::map<std::string, float
             }
 
             double value = std::atof(valueStr.c_str());
+            if (valueStr.find('.', valueStr.find('.') + 1) != std::string::npos)
+            {
+                std::cerr << "Error: bad input => " << line << std::endl;
+                continue ;
+            }
+
             if (valueStr.find_first_not_of("0123456789.") != std::string::npos || value < 0 || value > 1000)
             {
                 if (value < 0)
@@ -150,7 +156,7 @@ void processInput(const std::string &filename, const std::map<std::string, float
                     std::cerr << "Error: too large a number." << std::endl;
                 else
                     std::cerr << "Error: bad input => " << line << std::endl;
-                continue;
+                continue ;
             }
 
             std::map<std::string, float>::const_iterator it = db.lower_bound(date);

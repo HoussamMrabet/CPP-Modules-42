@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 15:48:30 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/12/08 13:28:06 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/12/08 14:52:08 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ template <typename Container>
 Container generateJacobsthalSequence(size_t size)
 {
     Container sequence;
-    typename Container::value_type a = 0, b = 1; // Use container's value type
+    typename Container::value_type a = 0, b = 1;
     while (sequence.size() < size)
     {
         sequence.push_back(b);
@@ -56,8 +56,7 @@ void mergeInsertionSort(Container& container)
     if (container.size() <= 1)
         return;
 
-    // Step 1: Handle straggler if the size is odd
-    typename Container::value_type straggler = typename Container::value_type();
+    typename Container::value_type straggler = 0;
     bool hasStraggler = container.size() % 2 != 0;
     if (hasStraggler)
     {
@@ -65,7 +64,6 @@ void mergeInsertionSort(Container& container)
         container.pop_back();
     }
 
-    // Step 2: Divide into pairs and sort each pair
     Container pairs;
     for (size_t i = 0; i < container.size(); i += 2)
     {
@@ -74,10 +72,8 @@ void mergeInsertionSort(Container& container)
         pairs.push_back(container[i + 1]);
     }
 
-    // Step 3: Sort recursively by the largest elements in pairs
     mergeInsertionSort(pairs);
 
-    // Step 4: Create sorted sequence S and pend array
     Container sorted, pend;
     typename Container::iterator it = pairs.begin();
     for (; it != pairs.end(); ++it)
@@ -86,10 +82,8 @@ void mergeInsertionSort(Container& container)
     for (size_t i = 0; i < container.size(); i += 2)
         pend.push_back(container[i]);
 
-    // Generate Jacobsthal sequence for pend size
     Container jacobsthalSequence = generateJacobsthalSequence<Container>(pend.size());
 
-    // Step 5: Insert elements from pend into sorted using Jacobsthal order
     for (size_t i = 0; i < jacobsthalSequence.size(); ++i)
     {
         size_t idx = jacobsthalSequence[i];
@@ -100,14 +94,12 @@ void mergeInsertionSort(Container& container)
         }
     }
 
-    // Step 6: Handle straggler
     if (hasStraggler)
     {
         typename Container::iterator pos = std::lower_bound(sorted.begin(), sorted.end(), straggler);
         sorted.insert(pos, straggler);
     }
 
-    // Replace original container with sorted values
     container = sorted;
 }
 
