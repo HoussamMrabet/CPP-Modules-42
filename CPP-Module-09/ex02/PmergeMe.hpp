@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 15:48:30 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/12/07 15:52:43 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/12/08 13:28:06 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <algorithm>
 #include <ctime>
 #include <cstdlib>
+#include <iomanip>
 
 bool isPositiveInteger(const std::string& str);
 
@@ -32,6 +33,23 @@ void displayContainer(const Container& container)
     std::cout << std::endl;
 }
 
+#include <algorithm>
+
+template <typename Container>
+Container generateJacobsthalSequence(size_t size)
+{
+    Container sequence;
+    typename Container::value_type a = 0, b = 1; // Use container's value type
+    while (sequence.size() < size)
+    {
+        sequence.push_back(b);
+        typename Container::value_type next = a + 2 * b;
+        a = b;
+        b = next;
+    }
+    return sequence;
+}
+
 template <typename Container>
 void mergeInsertionSort(Container& container)
 {
@@ -39,7 +57,7 @@ void mergeInsertionSort(Container& container)
         return;
 
     // Step 1: Handle straggler if the size is odd
-    typename Container::value_type straggler = 0;
+    typename Container::value_type straggler = typename Container::value_type();
     bool hasStraggler = container.size() % 2 != 0;
     if (hasStraggler)
     {
@@ -61,16 +79,25 @@ void mergeInsertionSort(Container& container)
 
     // Step 4: Create sorted sequence S and pend array
     Container sorted, pend;
-    for (size_t i = 0; i < pairs.size(); ++i)
-        sorted.push_back(pairs[i]);
+    typename Container::iterator it = pairs.begin();
+    for (; it != pairs.end(); ++it)
+        sorted.push_back(*it);
+
     for (size_t i = 0; i < container.size(); i += 2)
         pend.push_back(container[i]);
 
-    // Step 5: Insert elements from pend into sorted
-    for (typename Container::iterator it = pend.begin(); it != pend.end(); ++it)
+    // Generate Jacobsthal sequence for pend size
+    Container jacobsthalSequence = generateJacobsthalSequence<Container>(pend.size());
+
+    // Step 5: Insert elements from pend into sorted using Jacobsthal order
+    for (size_t i = 0; i < jacobsthalSequence.size(); ++i)
     {
-        typename Container::iterator pos = std::lower_bound(sorted.begin(), sorted.end(), *it);
-        sorted.insert(pos, *it);
+        size_t idx = jacobsthalSequence[i];
+        if (idx <= pend.size())
+        {
+            typename Container::iterator pos = std::lower_bound(sorted.begin(), sorted.end(), pend[idx - 1]);
+            sorted.insert(pos, pend[idx - 1]);
+        }
     }
 
     // Step 6: Handle straggler

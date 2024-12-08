@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 02:52:14 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/12/07 15:50:31 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/12/08 13:34:38 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ int main(int argc, char** argv)
     // Display timings
     double timeVector = static_cast<double>(endVector - startVector) / CLOCKS_PER_SEC * 1000000;
     double timeDeque = static_cast<double>(endDeque - startDeque) / CLOCKS_PER_SEC * 1000000;
-    std::cout << "Time to process a range of " << inputVector.size() << " elements with std::vector: " << timeVector << " us" << std::endl;
-    std::cout << "Time to process a range of " << inputDeque.size() << " elements with std::deque: " << timeDeque << " us" << std::endl;
+    std::cout << "Time to process a range of " << inputVector.size() << " elements with std::vector: " << std::fixed << std::setprecision(6) << timeVector << " us" << std::endl;
+    std::cout << "Time to process a range of " << inputDeque.size() << " elements with std::deque: " << std::fixed << std::setprecision(6) <<timeDeque << " us" << std::endl;
 
     return (0);
 }
