@@ -6,7 +6,7 @@
 /*   By: hmrabet <hmrabet@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 02:52:14 by hmrabet           #+#    #+#             */
-/*   Updated: 2024/12/08 14:52:26 by hmrabet          ###   ########.fr       */
+/*   Updated: 2024/12/08 21:06:06 by hmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(int argc, char** argv)
     std::vector<int> inputVector;
     for (int i = 1; i < argc; ++i)
     {
-        if (!isPositiveInteger(argv[i]))
+        if (!isValidNumber(argv[i]))
         {
             std::cerr << "Error: Invalid input." << std::endl;
             return (1);
@@ -47,10 +47,10 @@ int main(int argc, char** argv)
     std::cout << "After: ";
     displayContainer(inputVector);
 
-    double timeVector = static_cast<double>(endVector - startVector) / CLOCKS_PER_SEC * 1000000;
-    double timeDeque = static_cast<double>(endDeque - startDeque) / CLOCKS_PER_SEC * 1000000;
-    std::cout << "Time to process a range of " << inputVector.size() << " elements with std::vector: " << std::fixed << std::setprecision(6) << timeVector << " us" << std::endl;
-    std::cout << "Time to process a range of " << inputDeque.size() << " elements with std::deque: " << std::fixed << std::setprecision(6) <<timeDeque << " us" << std::endl;
+    double timeVector = static_cast<double>(endVector - startVector) / CLOCKS_PER_SEC * 1000;
+    double timeDeque = static_cast<double>(endDeque - startDeque) / CLOCKS_PER_SEC * 1000;
+    std::cout << "Time to process a range of " << inputVector.size() << " elements with std::vector: " << std::fixed << std::setprecision(3) << timeVector << " ms" << std::endl;
+    std::cout << "Time to process a range of " << inputDeque.size() << " elements with std::deque: " << std::fixed << std::setprecision(3) <<timeDeque << " ms" << std::endl;
 
     return (0);
 }
