@@ -10,10 +10,10 @@ Module index
 - [CPP-Module-03](CPP-Module-03/README.md) — Classes, inheritance and polymorphism basics
 - [CPP-Module-04](CPP-Module-04/README.md) — Virtual functions, abstract classes, and deep copies
 - [CPP-Module-05](CPP-Module-05/README.md) — More OOP patterns, operator overloading and exception handling
-- [CPP-Module-06](CPP-Module-06/README.md) — Templates, iterators, and advanced container patterns
+-- [CPP-Module-06](CPP-Module-06/README.md) — Type conversions, serialization and RTTI (detailed)
 - [CPP-Module-07](CPP-Module-07/README.md) — Advanced features: STL, functors, algorithms
-- [CPP-Module-08](CPP-Module-08/README.md) — Concurrency, networking, or system-level topics
-- [CPP-Module-09](CPP-Module-09/README.md) — Final projects and integration exercises
+-- [CPP-Module-08](CPP-Module-08/README.md) — STL algorithmic exercises and container utilities (detailed)
+-- [CPP-Module-09](CPP-Module-09/README.md) — Algorithmic challenges and small projects (detailed)
 
 How to use
 
